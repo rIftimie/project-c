@@ -1,6 +1,6 @@
 [project]
 name = "think-bro"
-version = "0.0.0"
+version = "0.0.1"
 description = "Semantic AI Agent for YouTube Wisdom & Gym Knowledge"
 authors = [
     {name = "Robert Iftimie", email = "thunderray16@gmail.com"}
