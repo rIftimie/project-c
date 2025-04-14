@@ -1,0 +1,38 @@
+services:
+  chroma:
+    image: chromadb/chroma:latest
+    environment:
+      - CHROMA_SERVER_HOST=0.0.0.0
+      - CHROMA_SERVER_HTTP_PORT=8000
+      - ALLOW_RESET=true
+      - CHROMA_SERVER_CORS_ALLOW_ORIGINS='["http://localhost:8000"]'
+    volumes:
+      - chroma_data:/chroma/chroma
+    ports:
+      - "8000:8000"
+    networks:
+      - chroma_net
+
+  postgres:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=think_bro
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-scripts:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+    networks:
+      - chroma_net
+
+volumes:
+  chroma_data:
+    driver: local
+  postgres_data:
+    driver: local
+
+networks:
+  chroma_net:
+    driver: bridge 
