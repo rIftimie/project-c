@@ -1,36 +1,31 @@
-[project]
+[tool.poetry]
 name = "think-bro"
 version = "0.0.1"
 description = "Semantic AI Agent for YouTube Wisdom & Gym Knowledge"
-authors = [
-    {name = "Robert Iftimie", email = "thunderray16@gmail.com"}
-]
+authors = ["Robert Iftimie <thunderray16@gmail.com>"]
 readme = "README.md"
-requires-python = ">=3.10"
-license = {text = "MIT"}
+packages = [{include = "think_bro"}]
+license = "MIT"
 classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Operating System :: OS Independent",
 ]
 
-dependencies = [
-    "psycopg2>=2.9.10",
-    "sentence-transformers>=2.2.2",
-    "numpy>=1.21.0",
-    "tqdm>=4.65.0",
-    "torch>=2.0.0",
-    "yt-dlp>=2023.12.30",
-    "ffmpeg-python>=0.2.0",
-    "chromadb>=0.4.22",
-]
+[tool.poetry.dependencies]
+python = ">=3.10"
+psycopg2 = ">=2.9.10"
+sentence-transformers = ">=2.2.2"
+numpy = ">=1.21.0"
+tqdm = ">=4.65.0"
+torch = ">=2.0.0"
+yt-dlp = ">=2023.12.30"
+ffmpeg-python = ">=0.2.0"
+chromadb = ">=0.4.22"
 
-[project.urls]
-Repository = "https://github.com/yourusername/think-bro"
+[tool.poetry.scripts]
+thinkbro = "main:main"
 
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
-[project.scripts]
-thinkbro = "main:main" 
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api" 
