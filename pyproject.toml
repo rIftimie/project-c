@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "think-bro"
-version = "0.0.2"
+version = "0.0.3"
 description = "Semantic AI Agent for YouTube Wisdom & Gym Knowledge"
 authors = ["Robert Iftimie <thunderray16@gmail.com>"]
 readme = "README.md"
