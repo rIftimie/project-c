@@ -1,13 +1,14 @@
 import os
 import json
 import logging
+from pathlib import Path
 from sentence_transformers import SentenceTransformer
 import chromadb
 from chromadb.config import Settings
 from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
 from tqdm import tqdm
 from datetime import datetime, timedelta
-from db_client import (
+from ..storage.db_client import (
     insert_video_metadata, 
     insert_transcript_chunks, 
     insert_channel_metadata, 
@@ -23,12 +24,16 @@ COLLECTION_NAME = "think_bro"
 MODEL_NAME = "all-MiniLM-L6-v2"
 CHUNK_SIZE = 100  # Number of words per chunk
 
+# Ensure logs directory exists
+logs_dir = Path("logs")
+logs_dir.mkdir(exist_ok=True)
+
 # === SETUP LOGGING ===
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler("embedding_progress.log"),
+        logging.FileHandler(logs_dir / "embedding_progress.log"),
         logging.StreamHandler()
     ]
 )

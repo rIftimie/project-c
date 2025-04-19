@@ -144,12 +144,16 @@ class TranscriptionManager:
 if __name__ == "__main__":
     import argparse
     
+    # Ensure logs directory exists
+    logs_dir = Path("logs")
+    logs_dir.mkdir(exist_ok=True)
+
     # Configure logging
     logging.basicConfig(
         level=logging.INFO,
         format='%(asctime)s - %(levelname)s - %(message)s',
         handlers=[
-            logging.FileHandler('transcription.log'),
+            logging.FileHandler(logs_dir / 'transcription.log'),
             logging.StreamHandler()
         ]
     )

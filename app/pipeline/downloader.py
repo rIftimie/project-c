@@ -14,15 +14,35 @@ import sys
 import shutil
 import re
 from urllib.parse import urlparse, unquote
-from audio_processor import trim_silence
-from transcribe import TranscriptionManager
+from .audio_processor import trim_silence
+from .transcriber import TranscriptionManager
+
+# Get the absolute path to the project root directory
+PROJECT_ROOT = Path(__file__).parent.parent.parent.resolve()
+
+def get_ytdlp_path():
+    """Get the path to the yt-dlp binary"""
+    # Check in app/bin first (our preferred location)
+    bin_path = PROJECT_ROOT / "app" / "bin" / "yt-dlp"
+    if bin_path.exists():
+        return str(bin_path)
+    
+    # Fallback to checking if it's in PATH
+    if shutil.which("yt-dlp"):
+        return "yt-dlp"
+    
+    raise FileNotFoundError("yt-dlp binary not found. Please ensure it's installed in app/bin or available in PATH")
+
+# Ensure logs directory exists
+logs_dir = Path("logs")
+logs_dir.mkdir(exist_ok=True)
 
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('download_progress.log'),
+        logging.FileHandler(logs_dir / 'download_progress.log'),
         logging.StreamHandler()
     ]
 )
@@ -144,7 +164,7 @@ class DownloadManager:
         """Get total video count and channel metadata"""
         try:
             command = [
-                "./yt-dlp",
+                get_ytdlp_path(),
                 "--dump-single-json",
                 "--flat-playlist",
             ]
@@ -204,8 +224,8 @@ class DownloadManager:
         print(f"New videos available: {total_videos - existing_count}")
         print("\nOptions:")
         print("1. Download all new videos")
-        print("2. Download specific number of oldest videos")
-        print("3. Download specific number of latest videos")
+        print("2. Download specific number of latest videos")
+        print("3. Download specific number of oldest videos")
         print("4. Download specific video by ID")
         print("5. Cancel download")
         
@@ -254,7 +274,7 @@ class DownloadManager:
         """Extract useful metadata for a single video"""
         try:
             command = [
-                "./yt-dlp",
+                get_ytdlp_path(),
                 "--dump-single-json",
                 "--no-playlist",
                 f"https://www.youtube.com/watch?v={video_id}"
@@ -313,7 +333,7 @@ class DownloadManager:
                 filename_template = f"{video_id}.%(ext)s"
                 
                 command = [
-                    "./yt-dlp",
+                    get_ytdlp_path(),
                     "--extract-audio",
                     "--audio-format", "wav",
                     "--audio-quality", "0",
@@ -407,7 +427,7 @@ class DownloadManager:
         try:
             # First verify the video exists and get its channel info
             command = [
-                "./yt-dlp",
+                get_ytdlp_path(),
                 "--dump-single-json",
                 "--no-playlist",
                 f"https://www.youtube.com/watch?v={video_id}"

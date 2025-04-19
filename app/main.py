@@ -1,4 +1,4 @@
-from agent import ask_agent
+from .agent.agent import ask_agent
 
 def show_cli_banner():
     print(r"""

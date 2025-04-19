@@ -1,4 +1,4 @@
-from chroma_client import get_chroma_client
+from ..storage.chroma_client import get_chroma_client
 from sentence_transformers import SentenceTransformer
 from typing import List
 

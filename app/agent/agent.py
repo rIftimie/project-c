@@ -1,6 +1,6 @@
 import ollama
-from retriever import retrieve_context
-from context_builder import build_context
+from ..retriever.retriever import retrieve_context
+from ..pipeline.context_builder import build_context
 
 def ask_agent(query: str, top_k=5, model="mistral"):
     print(f"\n🤖 Querying agent: {query}\n")
