@@ -1,6 +1,6 @@
 # ThinkBro 🧠
 
-> Your personal AI trainer that learns from thousands of hours of fitness content, remembers what matters, and answers your questions — grounded in real transcripts, quotes, and wisdom.
+> Your personal AI trainer that learns from thousands of hours of content, remembers what matters, and answers your questions — grounded in real transcripts, quotes, and wisdom.
 
 From *Sam Sulek's mindset* to *Huberman's protocols* to your coach's advice — ThinkBro **retrieves** what's relevant and **responds** like a knowledgeable personal trainer who's watched it all.
 
@@ -82,21 +82,3 @@ From *Sam Sulek's mindset* to *Huberman's protocols* to your coach's advice — 
    "In one of his bulk day episodes, Sam mentions starting light to feel the movement, 
    not to impress. It's not about the weight — it's about control and tension."
    ```
-
-### Example Questions
-
-- "What does Sam Sulek think about creatine?"
-- "How should I approach progressive overload?"
-- "What's Huberman's take on pre-workout supplements?"
-- "Share some motivational quotes about pushing through plateaus"
-
-## 🙏 Acknowledgments
-
-- Thanks to all the content creators whose wisdom this project helps organize
-- The amazing open-source communities behind the tools we use
-
----
-
-<p align="center">
-Made with ❤️ for the fitness community
-</p>
