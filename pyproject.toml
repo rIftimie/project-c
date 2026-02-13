@@ -4,7 +4,7 @@ version = "0.0.3"
 description = "Semantic AI Agent for YouTube Wisdom & Gym Knowledge"
 authors = ["Robert Iftimie <thunderray16@gmail.com>"]
 readme = "README.md"
-packages = [{include = "project_c"}]
+packages = [{include = "app"}]
 license = "MIT"
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -24,7 +24,7 @@ ffmpeg-python = ">=0.2.0"
 chromadb = ">=0.4.22"
 
 [tool.poetry.scripts]
-project-c = "main:main"
+project-c = "app.main:main"
 
 [build-system]
 requires = ["poetry-core"]

@@ -32,7 +32,7 @@ def get_chroma_client(max_retries=3, retry_delay=2):
                 print(f"Failed to connect to ChromaDB after {max_retries} attempts.")
                 print(f"Error: {str(e)}")
                 print("\nPlease ensure that:")
-                print("1. The Docker container is running (docker-compose up -d)")
+                print("1. The Docker container is running (docker compose up -d)")
                 print("2. Port 8000 is available and not blocked")
                 print("3. The environment variables are correctly set")
                 sys.exit(1)

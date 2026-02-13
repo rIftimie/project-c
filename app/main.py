@@ -1,5 +1,6 @@
 from .agent.agent import ask_agent
 
+
 def show_cli_banner():
     print(r"""
 ╔════════════════════════════════════════════════════════╗
@@ -12,7 +13,7 @@ def show_cli_banner():
 """)
 
 
-if __name__ == "__main__":
+def main():
     show_cli_banner()
     print("🎤 Welcome to Project C")
     while True:
@@ -21,3 +22,7 @@ if __name__ == "__main__":
             break
         answer = ask_agent(query)
         print(f"\n🗣️ {answer}\n")
+
+
+if __name__ == "__main__":
+    main()
