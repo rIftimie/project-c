@@ -1,4 +1,4 @@
-# Project C 🧠
+# Project C 
 
 > Your personal AI trainer that learns from thousands of hours of content, remembers what matters, and answers your questions — grounded in real transcripts, quotes, and wisdom.
 
@@ -14,14 +14,14 @@ From *Sam Sulek's mindset* to *Huberman's protocols* to your coach's advice — 
 
 ## ✨ Features
 
-- 🎙️ **Smart Transcription**: Convert YouTube videos to text using `yt-dlp` + `faster-whisper`
-- ✂️ **Audio Enhancement**: Auto-trim silence with `ffmpeg` for cleaner processing
-- 🔊 **Advanced Embedding**: Transform speech into vectors using `sentence-transformers`
-- 🗃️ **Robust Storage**: Store metadata in PostgreSQL and vectors in Chroma DB
-- 🔍 **Intelligent Search**: Semantic search and contextual retrieval of transcripts
-- 🤖 **Local AI**: Powered by `Ollama` for privacy-focused, grounded responses
-- 🔛 **Versatile Learning**: Compatible with fitness, education, podcasts, and more
-- 🔐 **Privacy First**: 100% local, self-hosted, zero API keys needed
+- **Smart Transcription**: Convert YouTube videos to text using `yt-dlp` + `faster-whisper`
+- **Audio Enhancement**: Auto-trim silence with `ffmpeg` for cleaner processing
+- **Advanced Embedding**: Transform speech into vectors using `sentence-transformers`
+- **Robust Storage**: Store metadata in PostgreSQL and vectors in Chroma DB
+- **Intelligent Search**: Semantic search and contextual retrieval of transcripts
+- **Local AI**: Powered by `Ollama` for privacy-focused, grounded responses
+- **Versatile Learning**: Compatible with fitness, education, podcasts, and more
+- **Privacy First**: 100% local, self-hosted, zero API keys needed
 
 ## 🛠 Tech Stack
 
@@ -46,32 +46,27 @@ From *Sam Sulek's mindset* to *Huberman's protocols* to your coach's advice — 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/project-c.git
+   git clone https://github.com/rIftimie/project-c.git
    cd project-c
    ```
 
-2. Create and activate a virtual environment:
+2. Install dependencies with Poetry:
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: .\venv\Scripts\activate
+   pip install poetry
+   poetry install
    ```
 
-3. Install dependencies:
+3. Start required services:
    ```bash
-   pip install -r requirements.txt
-   ```
-
-4. Start required services:
-   ```bash
-   docker-compose up -d  # Starts PostgreSQL and Chroma
-   ollama serve         # Start Ollama in a separate terminal
+   docker compose up -d  # Starts PostgreSQL and Chroma
+   ollama serve          # Start Ollama in a separate terminal
    ```
 
 ## 💡 Usage
 
 1. Start Project C:
    ```bash
-   python main.py
+   poetry run project-c
    ```
 
 2. Ask questions naturally:
