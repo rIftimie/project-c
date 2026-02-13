@@ -20,7 +20,7 @@ from ..storage.db_client import (
 DATA_DIR = "data"
 CHROMA_HOST = "0.0.0.0"  # Docker container host
 CHROMA_PORT = "8000"      # Docker container port
-COLLECTION_NAME = "think_bro"
+COLLECTION_NAME = "project_c"
 MODEL_NAME = "all-MiniLM-L6-v2"
 CHUNK_SIZE = 100  # Number of words per chunk
 

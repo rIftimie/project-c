@@ -6,7 +6,7 @@ embedder = SentenceTransformer("all-MiniLM-L6-v2")
 
 def retrieve_context(query: str, top_k=5) -> List[dict]:
     client = get_chroma_client()
-    collection = client.get_collection("think_bro")
+    collection = client.get_collection("project_c")
 
     query_vector = embedder.encode(query)
 

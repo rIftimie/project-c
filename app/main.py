@@ -3,7 +3,7 @@ from .agent.agent import ask_agent
 def show_cli_banner():
     print(r"""
 ╔════════════════════════════════════════════════════════╗
-║   🧠 THINKBRO - Memory's been working out. 💪           ║
+║   🧠 PROJECT C - Memory's been working out. 💪          ║
 ╠════════════════════════════════════════════════════════╣
 ║  Semantic AI Agent for YouTube Wisdom & Gym Knowledge ║
 ║  Powered by ChromaDB · PostgreSQL · Ollama (Local LLM)║
@@ -14,9 +14,9 @@ def show_cli_banner():
 
 if __name__ == "__main__":
     show_cli_banner()
-    print("🎤 Welcome to ThinkBro")
+    print("🎤 Welcome to Project C")
     while True:
-        query = input("\n🧠 Ask ThinkBro anything (or 'q' to quit): ")
+        query = input("\n🧠 Ask Project C anything (or 'q' to quit): ")
         if query.lower() == 'q':
             break
         answer = ask_agent(query)

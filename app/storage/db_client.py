@@ -5,7 +5,7 @@ from datetime import datetime
 
 # Database config - matches docker-compose.yml settings
 DB_CONFIG = {
-    "dbname": "think_bro",
+    "dbname": "project_c",
     "user": "postgres",
     "password": "postgres",
     "host": "localhost",

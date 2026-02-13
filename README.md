@@ -1,8 +1,8 @@
-# ThinkBro 🧠
+# Project C 🧠
 
 > Your personal AI trainer that learns from thousands of hours of content, remembers what matters, and answers your questions — grounded in real transcripts, quotes, and wisdom.
 
-From *Sam Sulek's mindset* to *Huberman's protocols* to your coach's advice — ThinkBro **retrieves** what's relevant and **responds** like a knowledgeable personal trainer who's watched it all.
+From *Sam Sulek's mindset* to *Huberman's protocols* to your coach's advice — Project C **retrieves** what's relevant and **responds** like a knowledgeable personal trainer who's watched it all.
 
 <p align="center">
   <a href="#-features">Features</a> •
@@ -46,8 +46,8 @@ From *Sam Sulek's mindset* to *Huberman's protocols* to your coach's advice — 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/think-bro.git
-   cd think-bro
+   git clone https://github.com/yourusername/project-c.git
+   cd project-c
    ```
 
 2. Create and activate a virtual environment:
@@ -69,7 +69,7 @@ From *Sam Sulek's mindset* to *Huberman's protocols* to your coach's advice — 
 
 ## 💡 Usage
 
-1. Start ThinkBro:
+1. Start Project C:
    ```bash
    python main.py
    ```
@@ -78,7 +78,7 @@ From *Sam Sulek's mindset* to *Huberman's protocols* to your coach's advice — 
    ```
    > what's sam's advice on warming up for legs?
 
-   🗣️ ThinkBro says:
+   🗣️ Project C says:
    "In one of his bulk day episodes, Sam mentions starting light to feel the movement, 
    not to impress. It's not about the weight — it's about control and tension."
    ```

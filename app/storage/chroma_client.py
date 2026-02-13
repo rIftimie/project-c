@@ -121,7 +121,7 @@ def display_collection_contents(collection, limit=10):
         print(f"Error displaying collection contents: {str(e)}")
         raise
 
-def analyze_collection(client, collection_name="think_bro"):
+def analyze_collection(client, collection_name="project_c"):
     """Analyze and display detailed information about a specific collection."""
     try:
         # Try to get the collection, create it if it doesn't exist
@@ -207,14 +207,14 @@ def main():
     
     if args.search:
         # If search query provided, perform search
-        collection = client.get_collection("think_bro")
+        collection = client.get_collection("project_c")
         search_collection(collection, args.search, args.limit)
     else:
         # Otherwise show collection info
         print("\nListing all collections:")
         list_collections(client)
         
-        print("\nAnalyzing think_bro collection:")
+        print("\nAnalyzing project_c collection:")
         analyze_collection(client)
 
 if __name__ == "__main__":
